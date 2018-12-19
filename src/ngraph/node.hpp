@@ -127,11 +127,7 @@ namespace ngraph
         /// Return true if this has the same implementing class as node. This
         /// will be used by the pattern matcher when comparing a pattern
         /// graph against the graph.
-        bool is_same_op_type(const std::shared_ptr<Node>& node) const
-        {
-            Node* n = node.get();
-            return std::type_index(typeid(*this)) == std::type_index(typeid(*n));
-        }
+        bool is_same_op_type(const std::shared_ptr<Node>& node) const;
 
         void set_output_type(size_t i,
                              const element::Type& element_type,

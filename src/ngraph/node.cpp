@@ -140,6 +140,11 @@ void Node::set_name(const string& name)
     }
 }
 
+bool Node::is_same_op_type(const std::shared_ptr<Node>& node) const {
+    Node* n = node.get();
+    return std::type_index(typeid(*this)) == std::type_index(typeid(*n));
+}
+
 Placement Node::get_placement() const
 {
     return m_placement;
